@@ -2,7 +2,6 @@
 export PATH=$(brew --prefix)/bin:$PATH
 export PATH=$(brew --prefix)/sbin:$PATH
 export PATH=$(brew --prefix)/opt/ruby/bin:$PATH
-export HOMEBREW_GITHUB_API_TOKEN=915bf69ba13481fed7459d5be6c56382bd1f2520
 
 # java
 export JAVA_HOME=$(/usr/libexec/java_home)
@@ -25,3 +24,5 @@ export PATH=$PATH:~/Development/android-sdk-macosx/platform-tools
 
 # home scripts
 export PATH=$PATH:~/bin
+
+export PS1="[\u@\h:\W]\\$ "
