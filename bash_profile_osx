@@ -25,4 +25,5 @@ export PATH=$PATH:~/Development/android-sdk-macosx/platform-tools
 # home scripts
 export PATH=$PATH:~/bin
 
-export PS1="[\u@\h:\W]\\$ "
+export PS1="[\u@\h \W]\\$ "
+
