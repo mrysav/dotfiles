@@ -18,12 +18,16 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 # export NVM_DIR=~/.nvm
 # source $(brew --prefix nvm)/nvm.sh
 
+# nodenv
+export NODENV_ROOT=/usr/local/var/nodenv
+if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
+
 # android sdk
-export PATH=$PATH:~/Development/android-sdk-macosx/tools
-export PATH=$PATH:~/Development/android-sdk-macosx/platform-tools
+export PATH=$PATH:~/projects/android-sdk-macosx/tools
+export PATH=$PATH:~/projects/android-sdk-macosx/platform-tools
 
 # home scripts
 export PATH=$PATH:~/bin
 
-export PS1="[\u@\h \W]\\$ "
+export PS1="[\u@\h:\W]\\$ "
 
