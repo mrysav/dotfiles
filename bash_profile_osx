@@ -32,5 +32,17 @@ export PATH=$PATH:~/Library/Android/sdk/platform-tools
 # home scripts
 export PATH=$PATH:~/bin
 
+# completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
+# perl + cpan
+export PATH=$PATH:~/.perl5/bin
+export PERL5LIB=~/.perl5/lib/perl5
+export PERL_LOCAL_LIB_ROOT=~/.perl5
+export PERL_MB_OPT="--install_base \"~/.perl5\""
+export PERL_MM_OPT="INSTALL_BASE=~/.perl5"
+
 export PS1="[\u@\h:\W]\\$ "
 
