@@ -1,5 +1,11 @@
 # shellcheck shell=bash
 
+# Main hook for bashrc
+# Everything is going to get crammed in here but technically
+# I should check for interactive or not at some point for some
+# potential speed gains when using bash non-interactively.
+# But how often does that happen anyway?
+
 export EDITOR="$(which vim)"
 
 # Alias definitions.
@@ -7,9 +13,16 @@ if [ -f ~/dotfiles/aliases.bash ]; then
     source "$HOME/dotfiles/aliases.bash"
 fi
 
-# rbenv
-# export PATH="$HOME/.rbenv/bin:$PATH"
-# eval "$(rbenv init --no-rehash -)"
+## rbenv
+# Test to see if it's installed via git checkout first, if so add it to path
+
+if [ -d "$HOME/.rbenv" ]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+fi
+
+if [ "$(which rbenv)" != "" ]; then
+    eval "$(rbenv init -)"
+fi
 
 # nodenv
 # export PATH="$HOME/.nodenv/bin:$PATH"
