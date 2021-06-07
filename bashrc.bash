@@ -14,19 +14,20 @@ if [ -f ~/dotfiles/aliases.bash ]; then
 fi
 
 ## rbenv
-# Test to see if it's installed via git checkout first, if so add it to path
-
 if [ -d "$HOME/.rbenv" ]; then
   export PATH="$HOME/.rbenv/bin:$PATH"
 fi
-
 if [ "$(which rbenv)" != "" ]; then
     eval "$(rbenv init -)"
 fi
 
-# nodenv
-# export PATH="$HOME/.nodenv/bin:$PATH"
-# eval "$(nodenv init --no-rehash -)"
+## nodenv
+if [ -d "$HOME/.nodenv" ]; then
+  export PATH="$HOME/.nodenv/bin:$PATH"
+fi
+if [ "$(which nodenv)" != "" ]; then
+    eval "$(nodenv init -)"
+fi
 
 # asdf
 if [ -f "$HOME/.asdf/asdf.sh" ]; then
