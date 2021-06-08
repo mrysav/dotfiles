@@ -18,7 +18,7 @@ if [ -d "$HOME/.rbenv" ]; then
   export PATH="$HOME/.rbenv/bin:$PATH"
 fi
 if [ "$(which rbenv)" != "" ]; then
-    eval "$(rbenv init -)"
+    eval "$(rbenv init --no-rehash -)"
 fi
 
 ## nodenv
@@ -26,7 +26,7 @@ if [ -d "$HOME/.nodenv" ]; then
   export PATH="$HOME/.nodenv/bin:$PATH"
 fi
 if [ "$(which nodenv)" != "" ]; then
-    eval "$(nodenv init -)"
+    eval "$(nodenv init --no-rehash -)"
 fi
 
 # asdf
