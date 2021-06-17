@@ -8,6 +8,12 @@
 
 export EDITOR="$(which vim)"
 
+# If there are secrets (access tokens, etc)
+# they can be put in a file like this that is not committed
+if [ -f "$HOME/.secrets.bash" ]; then
+    source "$HOME/.secrets.bash"
+fi
+
 # Alias definitions.
 if [ -f ~/dotfiles/aliases.bash ]; then
     source "$HOME/dotfiles/aliases.bash"
