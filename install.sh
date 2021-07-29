@@ -57,7 +57,16 @@ function install_tmuxconf {
 }
 
 function install_vimrc {
-    return
+    if [[ -z "$(which vim)" ]]; then
+        echo -e "vim is not found."
+        return
+    fi
+
+    VIMRC_FILE="$HOME/.vimrc"
+    VIMRC_SRC_LINE="so $DOTFILE_DIR/vim/vimrc.vim"
+
+    create_if_not_exist "$VIMRC_FILE"
+    add_line_if_not_present "$VIMRC_FILE" "$VIMRC_SRC_LINE"
 }
 
 check_prereqs
