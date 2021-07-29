@@ -35,6 +35,4 @@ fi
 export HOMEBREW_GITHUB_API_TOKEN="$GITHUB_ACCESS_TOKEN"
 export PATH="/usr/local/sbin:$PATH"
 
-# Always start in control mode since using iTerm2
-alias tmux="tmux -2 -CC"
 
