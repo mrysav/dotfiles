@@ -17,7 +17,7 @@ reset="$(tput sgr0)"
 bold="$(tput bold)"
 bold_green="\e[1;32m"
 bold_blue="\e[1;34m"
-export PS1="\[$bold_green\]@\u\[$reset\]\[$bold\]:\[$reset\]\[$bold_blue\]\w\[$reset\]\[$bold\]\$\[$reset\] "
+export PS1="\[$bold_green\]\u@\h\[$reset\]\[$bold\]:\[$reset\]\[$bold_blue\]\w\[$reset\]\[$bold\]\$\[$reset\] "
 
 export EDITOR="$(which vim)"
 
