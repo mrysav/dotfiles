@@ -57,3 +57,8 @@ fi
 if [ "$TILIX_ID" ] || [ "$VTE_VERSION" ]; then
     source /etc/profile.d/vte.sh
 fi
+
+aws_completer="$(which aws_completer)"
+if [ "$aws_completer" != "" ]; then
+  complete -C "$aws_completer" aws
+fi
