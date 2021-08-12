@@ -2,7 +2,14 @@
 
 function check_prereqs {
     if [[ -z "$(which git)" ]]; then
-        echo -e "git is required but not found!"
+        install_package "git"
+    else
+        echo -e "git is already installed!"
+    fi
+    if [[ -z "$BASH_COMPLETION" ]]; then
+        install_package "bash-completion"
+    else
+        echo -e "bash-completion is already installed!"
     fi
 }
 
@@ -37,6 +44,10 @@ function install_bashrc {
     if [[ "$DARWIN" == "1" ]]; then
         add_line_if_not_present "$BASHRC_FILE" "source \"\$DOTFILE_DIR/bash/mac.sh\""
     fi
+
+    if [[ "$CODESPACES" == "true" ]]; then
+        add_line_if_not_present "$BASHRC_FILE" "source \"\$DOTFILE_DIR/bash/codespaces.sh\""
+    fi
 }
 
 function install_tmuxconf {
@@ -69,7 +80,19 @@ function install_vimrc {
     add_line_if_not_present "$VIMRC_FILE" "$VIMRC_SRC_LINE"
 }
 
-check_prereqs
+function deb_install_packages {
+    echo -e "Need to install some stuff!"
+    sudo apt install -y git bash-completion
+}
+
+function install_package {
+    PKG="$1"
+    if [[ "$CODESPACES" == "true" ]]; then
+        sudo apt install -y "$PKG"
+    elif [[ "$DARWIN" == "1" ]]; then
+        brew install "$PKG"
+    fi
+}
 
 # As always, props to
 # https://stackoverflow.com/questions/59895/how-can-i-get-the-source-directory-of-a-bash-script-from-within-the-script-itsel
@@ -83,6 +106,12 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 else
     DARWIN=0
 fi
+
+if [[ "$CODESPACES" == "true" ]]; then
+    echo -e "Codespaces detected!"
+fi
+
+check_prereqs
 
 install_bashrc
 install_tmuxconf
