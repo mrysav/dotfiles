@@ -1,6 +1,6 @@
 # shellcheck shell=bash
 
-if [[ -n "$(which rbenv)" ]]; then
+if [[ -z "$(which rbenv)" ]]; then
     if [[ -d "$HOME/.rbenv/bin" ]]; then
         export PATH="$HOME/.rbenv/bin:$PATH"
     fi
