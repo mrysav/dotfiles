@@ -40,14 +40,6 @@ function install_bashrc {
 
     add_line_if_not_present "$BASHRC_FILE" "export DOTFILE_DIR=$DOTFILE_DIR"
     add_line_if_not_present "$BASHRC_FILE" "source \"\$DOTFILE_DIR/bash/bashrc.sh\""
-
-    if [[ "$DARWIN" == "1" ]]; then
-        add_line_if_not_present "$BASHRC_FILE" "source \"\$DOTFILE_DIR/bash/mac.sh\""
-    fi
-
-    if [[ "$CODESPACES" == "true" ]]; then
-        add_line_if_not_present "$BASHRC_FILE" "source \"\$DOTFILE_DIR/bash/codespaces.sh\""
-    fi
 }
 
 function install_tmuxconf {
@@ -78,11 +70,6 @@ function install_vimrc {
 
     create_if_not_exist "$VIMRC_FILE"
     add_line_if_not_present "$VIMRC_FILE" "$VIMRC_SRC_LINE"
-}
-
-function deb_install_packages {
-    echo -e "Need to install some stuff!"
-    sudo apt install -y git bash-completion
 }
 
 function install_package {
