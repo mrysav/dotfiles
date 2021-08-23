@@ -30,11 +30,7 @@ fi
 # Alias definitions
 source "$DOTFILE_DIR/bash/aliases.sh"
 
-## rbenv
-if [ -d "$HOME/.rbenv" ] && [ "$(which rbenv)" != "" ]; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
-  eval "$(rbenv init --no-rehash -)"
-fi
+source "$DOTFILE_DIR/bash/rbenv.sh"
 
 ## nodenv
 if [ -d "$HOME/.nodenv" ] && [ "$(which nodenv)" != "" ]; then
