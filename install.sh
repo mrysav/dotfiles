@@ -116,3 +116,5 @@ check_prereqs
 install_bashrc
 install_tmuxconf
 install_vimrc
+
+exec "$DOTFILE_DIR/installer/rbenv.sh"
