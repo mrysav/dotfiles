@@ -7,3 +7,4 @@ alias om="overmind"
 alias be="bundle exec"
 
 alias ws="cd ~/github"
+alias dotfiles="cd \$DOTFILE_DIR"
