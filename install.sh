@@ -26,7 +26,7 @@ function add_line_if_not_present {
     LINE="$2"
 
     if ! grep -q "$LINE" "$FILE"; then
-        echo "$LINE" >> "$FILE"
+        echo "$LINE" >>"$FILE"
     fi
 }
 
@@ -83,7 +83,7 @@ function install_package {
 
 # As always, props to
 # https://stackoverflow.com/questions/59895/how-can-i-get-the-source-directory-of-a-bash-script-from-within-the-script-itsel
-DOTFILE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+DOTFILE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
 
 echo -e "We appear to be running from $DOTFILE_DIR..."
 
