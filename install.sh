@@ -105,3 +105,4 @@ install_tmuxconf
 install_vimrc
 
 exec "$DOTFILE_DIR/installer/rbenv.sh"
+exec "$DOTFILE_DIR/installer/nodenv.sh"
