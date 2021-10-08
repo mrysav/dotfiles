@@ -34,5 +34,6 @@ else
 
     git clone https://github.com/rbenv/rbenv.git "$HOME/.rbenv"
     mkdir -p "$HOME/.rbenv/plugins"
+    git clone https://github.com/rbenv/ruby-build.git "$HOME/.rbenv/plugins/ruby-build"
     git clone https://github.com/rkh/rbenv-update.git "$HOME/.rbenv/plugins/rbenv-update"
 fi

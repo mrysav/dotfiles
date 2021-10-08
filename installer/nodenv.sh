@@ -36,6 +36,7 @@ else
 
     git clone https://github.com/nodenv/nodenv.git "$HOME/.nodenv"
     mkdir -p "$HOME/.nodenv/plugins"
+    git clone https://github.com/nodenv/node-build.git "$HOME/.nodenv/plugins/node-build"
     git clone https://github.com/nodenv/nodenv-aliases.git "$HOME/.nodenv/plugins/nodenv-aliases"
     git clone https://github.com/nodenv/nodenv-update.git "$HOME/.nodenv/plugins/nodenv-update"
 fi
