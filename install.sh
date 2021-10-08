@@ -106,3 +106,4 @@ install_vimrc
 
 "$DOTFILE_DIR/installer/rbenv.sh"
 "$DOTFILE_DIR/installer/nodenv.sh"
+"$DOTFILE_DIR/installer/gitconfig.sh"
