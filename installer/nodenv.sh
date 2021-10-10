@@ -21,7 +21,6 @@ else
     # https://github.com/rbenv/ruby-build/wiki#suggested-build-environment
 
     sudo apt-get install python3 g++ make
-    Fedora: sudo dnf install python3 gcc-c++ make
 
     # debian
     if [ -x "$(command -v apt-get)" ]; then
