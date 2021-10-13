@@ -12,7 +12,7 @@ fi
 
 echo -e "Installing nodenv..."
 
-if [[ -n "$(which brew)" ]]; then
+if [[ -n "$(which brew)" ]] && [[ "$(uname -s)" == "Darwin" ]]; then
     brew install nodenv node-build
 else
     echo -e "Installing prereqs for nodenv..."

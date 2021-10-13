@@ -12,7 +12,7 @@ fi
 
 echo -e "Installing rbenv..."
 
-if [[ -n "$(which brew)" ]]; then
+if [[ -n "$(which brew)" ]] && [[ "$(uname -s)" == "Darwin" ]]; then
     brew install rbenv ruby-build
 else
     echo -e "Installing prereqs for rbenv..."
