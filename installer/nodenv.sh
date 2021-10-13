@@ -20,11 +20,9 @@ else
     # Install prereqs... hopefully works
     # https://github.com/rbenv/ruby-build/wiki#suggested-build-environment
 
-    sudo apt-get install python3 g++ make
-
     # debian
     if [ -x "$(command -v apt-get)" ]; then
-        sudo apt-get install python3 g++ make# rhel, fedora, alinux
+        sudo apt-get install python3 g++ make # rhel, fedora, alinux
     elif [ -x "$(command -v yum)" ]; then
         sudo yum install python3 gcc-c++ make
     else
