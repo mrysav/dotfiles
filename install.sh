@@ -1,15 +1,15 @@
 #!/bin/bash
 
 function check_prereqs {
-    if [[ -z "$(which git)" ]]; then
-        install_package "git"
-    else
-        echo -e "git is already installed!"
+
+    if [[ "$DARWIN" == "1" ]] && [[ -n "$(which brew)" ]]; then
+        brew install git bash-completion
+        return
     fi
-    if [[ -z "$BASH_COMPLETION" ]]; then
-        install_package "bash-completion"
-    else
-        echo -e "bash-completion is already installed!"
+
+    if [[ -n "$(which apt)" ]]; then
+        sudo apt install -y git bash-completion
+        return
     fi
 }
 
@@ -28,6 +28,10 @@ function add_line_if_not_present {
     if ! grep -q "$LINE" "$FILE"; then
         echo "$LINE" >>"$FILE"
     fi
+}
+
+function install_gitconfig {
+    git config --global include.path "$DOTFILE_DIR/git/gitconfig.ini"
 }
 
 function install_bashrc {
@@ -72,15 +76,6 @@ function install_vimrc {
     add_line_if_not_present "$VIMRC_FILE" "$VIMRC_SRC_LINE"
 }
 
-function install_package {
-    PKG="$1"
-    if [[ "$CODESPACES" == "true" ]]; then
-        sudo apt install -y "$PKG"
-    elif [[ "$DARWIN" == "1" ]]; then
-        brew install "$PKG"
-    fi
-}
-
 # As always, props to
 # https://stackoverflow.com/questions/59895/how-can-i-get-the-source-directory-of-a-bash-script-from-within-the-script-itsel
 export DOTFILE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
@@ -103,7 +98,4 @@ check_prereqs
 install_bashrc
 install_tmuxconf
 install_vimrc
-
-"$DOTFILE_DIR/installer/rbenv.sh"
-"$DOTFILE_DIR/installer/nodenv.sh"
-"$DOTFILE_DIR/installer/gitconfig.sh"
+install_gitconfig
