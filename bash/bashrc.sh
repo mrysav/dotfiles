@@ -9,8 +9,6 @@
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
-source "$DOTFILE_DIR/bash/ps1.sh"
-
 export EDITOR="$(which vim)"
 
 # If there are secrets (access tokens, etc)
@@ -49,3 +47,5 @@ aws_completer="$(which aws_completer)"
 if [ "$aws_completer" != "" ]; then
   complete -C "$aws_completer" aws
 fi
+
+source "$DOTFILE_DIR/bash/ps1.sh"
