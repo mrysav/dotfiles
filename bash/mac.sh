@@ -20,6 +20,4 @@ else
     eval "$(gpg-agent --daemon)"
 fi
 
-# Homebrew stuff
-export HOMEBREW_GITHUB_API_TOKEN="$GITHUB_ACCESS_TOKEN"
 export PATH="/usr/local/sbin:$PATH"
