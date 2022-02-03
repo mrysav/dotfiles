@@ -5,6 +5,7 @@ alias tmux="tmux -2"
 alias tm="tmux attach || tmux"
 alias om="overmind"
 alias be="bundle exec"
+alias nm="neomutt"
 
 alias dotfiles="cd \$DOTFILE_DIR"
 
