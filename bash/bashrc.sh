@@ -17,6 +17,14 @@ if [ -f "$HOME/.secrets.env" ]; then
   source "$HOME/.secrets.env"
 fi
 
+# kind of a hack to make sure I get what I want here...
+# sometimes the /etc/profile is not sources but I want the completions
+if [[ "$CODESPACES" == "true" ]]; then
+  if [[ -f /etc/profile.d/bash_completion.sh ]]; then
+    source /etc/profile.d/bash_completion.sh
+  fi
+fi
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
   source "$DOTFILE_DIR/bash/mac.sh"
 fi
