@@ -6,6 +6,7 @@ alias tm="tmux attach || tmux"
 alias om="overmind"
 alias be="bundle exec"
 alias nm="neomutt"
+alias protontricks='flatpak run com.github.Matoking.protontricks'
 
 alias dotfiles="cd \$DOTFILE_DIR"
 
