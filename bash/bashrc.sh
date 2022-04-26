@@ -34,6 +34,7 @@ source "$DOTFILE_DIR/bash/aliases.sh"
 
 source "$DOTFILE_DIR/bash/rbenv.sh"
 source "$DOTFILE_DIR/bash/nodenv.sh"
+source "$DOTFILE_DIR/bash/pyenv.sh"
 
 # asdf
 if [ -f "$HOME/.asdf/asdf.sh" ]; then
