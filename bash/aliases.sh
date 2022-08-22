@@ -7,6 +7,7 @@ alias om="overmind"
 alias be="bundle exec"
 alias nm="neomutt"
 alias protontricks='flatpak run com.github.Matoking.protontricks'
+alias ghg="GH_HOST=github.gatech.edu gh"
 
 alias dotfiles="cd \$DOTFILE_DIR"
 
