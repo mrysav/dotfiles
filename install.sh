@@ -7,7 +7,7 @@ function check_prereqs {
         return
     fi
 
-    if [[ -n "$(which apt)" ]]; then
+    if [[ -n "$(which apt)" ]] && [[ "$(sudo -n echo hello 2>/dev/null)" == "hello" ]]; then
         sudo apt install -y git bash-completion
         return
     fi
