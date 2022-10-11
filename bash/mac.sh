@@ -4,6 +4,10 @@
 
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
+# this is annoying
+GIT_COMPLETE_FILE="/Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash"
+[[ -r "$GIT_COMPLETE_FILE" ]] && . "$GIT_COMPLETE_FILE"
+
 # Setup instructions:
 # https://gist.github.com/bmhatfield/cc21ec0a3a2df963bffa3c1f884b676b
 
