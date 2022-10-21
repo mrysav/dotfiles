@@ -36,12 +36,6 @@ source "$DOTFILE_DIR/bash/rbenv.sh"
 source "$DOTFILE_DIR/bash/nodenv.sh"
 source "$DOTFILE_DIR/bash/pyenv.sh"
 
-# asdf
-if [ -f "$HOME/.asdf/asdf.sh" ]; then
-  source "$HOME/.asdf/asdf.sh"
-  source "$HOME/.asdf/completions/asdf.bash"
-fi
-
 # devkitPro
 if [ -f "/etc/profile.d/devkit-env.sh" ]; then
   source /etc/profile.d/devkit-env.sh
