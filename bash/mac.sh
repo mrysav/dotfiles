@@ -25,3 +25,5 @@ else
 fi
 
 export PATH="/usr/local/sbin:$PATH"
+
+alias okta-pass="security find-generic-password -l device_trust '-w'"
