@@ -11,6 +11,8 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 
 export EDITOR="$(which vim)"
 
+export PATH="$PATH:$DOTFILE_DIR/bin"
+
 # If there are secrets (access tokens, etc)
 # they can be put in a file like this that is not committed
 if [ -f "$HOME/.secrets.env" ]; then
