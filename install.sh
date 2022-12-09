@@ -58,9 +58,9 @@ function install_tmuxconf {
     create_if_not_exist "$TMUXRC_FILE"
     add_line_if_not_present "$TMUXRC_FILE" "$TMUXRC_SRC_LINE"
 
-    if [[ ! -d ~/.tmux ]]; then
-        git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-    fi
+#    if [[ ! -d ~/.tmux ]]; then
+#        git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+#    fi
 }
 
 function install_vimrc {
