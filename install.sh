@@ -3,12 +3,12 @@
 function check_prereqs {
 
     if [[ "$DARWIN" == "1" ]] && [[ -n "$(which brew)" ]]; then
-        brew install git bash-completion
+        brew install git bash-completion neovim vim tmux
         return
     fi
 
     if [[ -n "$(which apt)" ]] && [[ "$(sudo -n echo hello 2>/dev/null)" == "hello" ]]; then
-        sudo apt install -y git bash-completion
+        sudo apt install -y git bash-completion neovim vim tmux
         return
     fi
 }
@@ -70,9 +70,33 @@ function install_vimrc {
     fi
 
     VIMRC_FILE="$HOME/.vimrc"
+    VIM_SRC_LINE="so $DOTFILE_DIR/vim/vim.vim"
     VIMRC_SRC_LINE="so $DOTFILE_DIR/vim/vimrc.vim"
 
     create_if_not_exist "$VIMRC_FILE"
+    add_line_if_not_present "$VIMRC_FILE" "$VIM_SRC_LINE"
+    add_line_if_not_present "$VIMRC_FILE" "$VIMRC_SRC_LINE"
+}
+
+function install_neovimrc {
+    if [[ -z "$(which nvim)" ]]; then
+        echo -e "neovim is not found."
+        return
+    fi
+
+    NVIM_CFG="$HOME/.config/nvim"
+    mkdir -p "$NVIM_CFG/plugged/"
+    
+    PLUG_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/nvim/site/autoload/plug.vim"
+    
+    VIMRC_FILE="$NVIM_CFG/init.vim"
+    NVIM_SRC_LINE="so $DOTFILE_DIR/vim/neovim.vim"
+    VIMRC_SRC_LINE="so $DOTFILE_DIR/vim/vimrc.vim"
+
+    curl -fLo "$PLUG_DIR" --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+    create_if_not_exist "$VIMRC_FILE"
+    add_line_if_not_present "$VIMRC_FILE" "$NVIM_SRC_LINE"
     add_line_if_not_present "$VIMRC_FILE" "$VIMRC_SRC_LINE"
 }
 
@@ -98,4 +122,5 @@ check_prereqs
 install_bashrc
 install_tmuxconf
 install_vimrc
+install_neovimrc
 install_gitconfig

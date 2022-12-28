@@ -19,3 +19,12 @@ else
     wsdir="$HOME/github"
 fi
 alias ws="cd $wsdir"
+
+if [[ -n "$(which nvim)" ]]; then
+    alias vim="nvim"
+    alias vi="nvim"
+elif [[ -n "$(which vim)" ]]; then
+    alias vi="vim"
+fi
+
+
