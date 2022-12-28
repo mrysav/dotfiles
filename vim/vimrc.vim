@@ -41,6 +41,10 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'scrooloose/syntastic'
 Plug 'wincent/terminus'
 
+for plugin in g:extra_plugins
+    Plug plugin
+endfor
+
 " Initialize plugin system
 call plug#end()
 
