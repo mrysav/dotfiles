@@ -11,6 +11,9 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 
 export EDITOR="$(which vim)"
 
+if [[ -d "$HOME/bin" ]]; then
+    export PATH="$PATH:$HOME/bin"
+fi
 export PATH="$PATH:$DOTFILE_DIR/bin"
 
 # If there are secrets (access tokens, etc)
