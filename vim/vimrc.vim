@@ -32,13 +32,13 @@ call plug#begin(g:vim_plug_dir)
 Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'edkolev/tmuxline.vim'
-Plug 'jparise/vim-graphql'
+" Plug 'jparise/vim-graphql'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'scrooloose/syntastic'
+" Plug 'preservim/nerdtree'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'vim-syntastic/syntastic'
 Plug 'wincent/terminus'
 
 for plugin in g:extra_plugins

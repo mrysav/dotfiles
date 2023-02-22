@@ -3,12 +3,12 @@
 function check_prereqs {
 
     if [[ "$DARWIN" == "1" ]] && [[ -n "$(which brew)" ]]; then
-        brew install git bash-completion neovim vim tmux
+        brew install git bash-completion vim tmux
         return
     fi
 
     if [[ -n "$(which apt)" ]] && [[ "$(sudo -n echo hello 2>/dev/null)" == "hello" ]]; then
-        sudo apt install -y git bash-completion neovim vim tmux
+        sudo apt install -y git bash-completion vim tmux
         return
     fi
 }
@@ -76,6 +76,8 @@ function install_vimrc {
     create_if_not_exist "$VIMRC_FILE"
     add_line_if_not_present "$VIMRC_FILE" "$VIM_SRC_LINE"
     add_line_if_not_present "$VIMRC_FILE" "$VIMRC_SRC_LINE"
+
+    curl -fLo "$HOME/.vim/autoload/plug.vim" --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
 
 function install_neovimrc {
