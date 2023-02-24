@@ -32,6 +32,10 @@ function add_line_if_not_present {
 
 function install_gitconfig {
     git config --global include.path "$DOTFILE_DIR/git/gitconfig.ini"
+    if [[ -n "$GITHUB_REPOSITORY" ]] && [[ ! $GITHUB_REPOSITORY == github/* ]]; then
+        echo "Detected that you are not working on a github.com repository."
+        git config --global user.email "mitchell.rysavy@gmail.com"
+    fi
 }
 
 function install_bashrc {
@@ -57,10 +61,6 @@ function install_tmuxconf {
 
     create_if_not_exist "$TMUXRC_FILE"
     add_line_if_not_present "$TMUXRC_FILE" "$TMUXRC_SRC_LINE"
-
-#    if [[ ! -d ~/.tmux ]]; then
-#        git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-#    fi
 }
 
 function install_vimrc {
