@@ -1,7 +1,7 @@
 # shellcheck shell=bash
 
 # Guard against init'ing twice
-if ! [[ "$PATH" == *"pyenv/shims"* ]]; then
+if ! [[ $PATH == *"pyenv/shims"* ]]; then
 
     if [[ -d "$HOME/.pyenv/bin" ]]; then
         export PATH="$HOME/.pyenv/bin:$PATH"

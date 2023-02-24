@@ -1,6 +1,6 @@
 # shellcheck shell=bash
 
-if ! [[ "$PATH" == *"rbenv/shims"* ]]; then
+if ! [[ $PATH == *"rbenv/shims"* ]]; then
 
     if [[ -d "$HOME/.rbenv/bin" ]]; then
         export PATH="$HOME/.rbenv/bin:$PATH"
