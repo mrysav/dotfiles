@@ -8,7 +8,7 @@ function check_prereqs {
     fi
 
     if [[ -n "$(which apt)" ]] && [[ "$(sudo -n echo hello 2>/dev/null)" == "hello" ]]; then
-        sudo apt install -y git bash-completion vim tmux
+        sudo apt update && sudo apt install -y git bash-completion vim tmux
         return
     fi
 }
