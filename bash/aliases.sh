@@ -5,8 +5,6 @@ alias tmux="tmux -2"
 alias tm="tmux attach || tmux"
 alias om="overmind"
 alias be="bundle exec"
-alias nm="neomutt"
-alias protontricks='flatpak run com.github.Matoking.protontricks'
 alias ghg="GH_HOST=github.gatech.edu gh"
 alias tf="terraform"
 
@@ -21,11 +19,7 @@ else
 fi
 alias ws="cd $wsdir"
 
-if [[ -n "$(which nvim)" ]]; then
-    alias vim="nvim"
-    alias vi="nvim"
-elif [[ -n "$(which vim)" ]]; then
-    alias vi="vim"
-fi
+alias nvi="nvim"
+alias vi="vim"
 
 

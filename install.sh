@@ -3,12 +3,12 @@
 function check_prereqs {
 
     if [[ "$DARWIN" == "1" ]] && [[ -n "$(which brew)" ]]; then
-        brew install git bash-completion vim tmux
+        brew install git bash-completion vim tmux ripgrep
         return
     fi
 
     if [[ -n "$(which apt)" ]] && [[ "$(sudo -n echo hello 2>/dev/null)" == "hello" ]]; then
-        sudo apt update && sudo apt install -y git bash-completion vim tmux
+        sudo apt update && sudo apt install -y git bash-completion vim tmux ripgrep
         return
     fi
 }
