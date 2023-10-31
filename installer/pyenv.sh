@@ -37,4 +37,5 @@ else
     git clone https://github.com/pyenv/pyenv-doctor.git "$HOME/.pyenv/plugins/pyenv-doctor"
     git clone https://github.com/pyenv/pyenv-implicit.git "$HOME/.pyenv/plugins/pyenv-implicit"
     git clone https://github.com/pyenv/pyenv-update.git "$HOME/.pyenv/plugins/pyenv-update"
+    git clone https://github.com/pyenv/pyenv-virtualenv.git "$HOME/.pyenv/plugins/pyenv-virtualenv"
 fi

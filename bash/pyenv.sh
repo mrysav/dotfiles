@@ -10,6 +10,7 @@ if ! [[ $PATH == *"pyenv/shims"* ]]; then
     if which pyenv >/dev/null; then
         eval "$(pyenv init --path)"
         eval "$(pyenv init -)"
+        eval "$(pyenv virtualenv-init -)"
     fi
 fi
 
