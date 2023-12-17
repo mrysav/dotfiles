@@ -41,6 +41,10 @@ source "$DOTFILE_DIR/bash/rbenv.sh"
 source "$DOTFILE_DIR/bash/nodenv.sh"
 source "$DOTFILE_DIR/bash/pyenv.sh"
 
+if [ -f "$HOME/.cargo/env" ]; then
+  source "$HOME/.cargo/env"
+fi
+
 # devkitPro
 if [ -f "/etc/profile.d/devkit-env.sh" ]; then
   source /etc/profile.d/devkit-env.sh
