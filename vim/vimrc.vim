@@ -32,13 +32,11 @@ call plug#begin(g:vim_plug_dir)
 Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'edkolev/tmuxline.vim'
-" Plug 'jparise/vim-graphql'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-"Plug 'vim-syntastic/syntastic'
 Plug 'dense-analysis/ale'
 Plug 'wincent/terminus'
 
@@ -56,11 +54,3 @@ let g:airline_theme = 'luna'
 " Set this. Airline will handle the rest.
 let g:airline#extensions#ale#enabled = 1
 
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 0
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
