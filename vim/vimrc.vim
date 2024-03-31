@@ -51,6 +51,9 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'luna'
 
+" only show errors on the selected line
+let g:ale_virtualtext_cursor = 'current'
+
 " Set this. Airline will handle the rest.
 let g:airline#extensions#ale#enabled = 1
 
