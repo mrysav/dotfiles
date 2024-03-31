@@ -40,14 +40,26 @@ function install_gitconfig {
 
 function install_bashrc {
     BASHRC_FILE="$HOME/.bashrc"
+    BASHPROFILE_FILE="$HOME/.bash_profile"
+
+    if [[ "$DARWIN" != "1" ]]; then
+        create_if_not_exist "$BASHRC_FILE"
+    fi
+    create_if_not_exist "$BASHPROFILE_FILE"
+
     if [[ "$DARWIN" == "1" ]]; then
-        BASHRC_FILE="$HOME/.bash_profile"
+        # On Mac: add all sourced files to .bash_profile
+        add_line_if_not_present "$BASHPROFILE_FILE" "export DOTFILE_DIR=$DOTFILE_DIR"
+        add_line_if_not_present "$BASHPROFILE_FILE" "source \"\$DOTFILE_DIR/bash/bashrc.sh\""
+        add_line_if_not_present "$BASHPROFILE_FILE" "source \"\$DOTFILE_DIR/bash/bash_profile.sh\""
+    else
+        # On Linux: separate sourced files between bashrc and bash_profile
+        add_line_if_not_present "$BASHRC_FILE" "export DOTFILE_DIR=$DOTFILE_DIR"
+        add_line_if_not_present "$BASHRC_FILE" "source \"\$DOTFILE_DIR/bash/bashrc.sh\""       
+        add_line_if_not_present "$BASHPROFILE_FILE" "export DOTFILE_DIR=$DOTFILE_DIR"
+        add_line_if_not_present "$BASHPROFILE_FILE" "source \"\$DOTFILE_DIR/bash/bash_profile.sh\""
     fi
 
-    create_if_not_exist "$BASHRC_FILE"
-
-    add_line_if_not_present "$BASHRC_FILE" "export DOTFILE_DIR=$DOTFILE_DIR"
-    add_line_if_not_present "$BASHRC_FILE" "source \"\$DOTFILE_DIR/bash/bashrc.sh\""
 }
 
 function install_tmuxconf {
