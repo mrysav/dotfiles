@@ -52,7 +52,9 @@ fi
 
 # VTE / Tilix Support
 if [ "$TILIX_ID" ] || [ "$VTE_VERSION" ]; then
-  source /etc/profile.d/vte.sh
+  if [[ -f /etc/profile.d/vte/sh ]]; then
+    source /etc/profile.d/vte.sh
+  fi
 fi
 
 aws_completer="$(which aws_completer)"
