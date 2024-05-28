@@ -17,11 +17,13 @@ GIT_COMPLETE_FILE="/Applications/Xcode.app/Contents/Developer/usr/share/git-core
 # gpg-agent or set up the GPG_AGENT_INFO variable if it's already running.
 
 # Add the following to your shell init to set up gpg-agent automatically for every shell
-if [ -n "$(pgrep gpg-agent)" ]; then
-    export GPG_AGENT_INFO
-    export GPG_TTY="$(tty)"
-else
-    eval "$(gpg-agent --daemon)"
+if which gpg-agent 2>/dev/null 1>/dev/null; then
+    if [ -n "$(pgrep gpg-agent)" ]; then
+        export GPG_AGENT_INFO
+        export GPG_TTY="$(tty)"
+    else
+        eval "$(gpg-agent --daemon)"
+    fi
 fi
 
 export PATH="/usr/local/sbin:$PATH"
