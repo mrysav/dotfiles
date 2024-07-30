@@ -63,5 +63,3 @@ if [ "$aws_completer" != "" ]; then
 fi
 
 source "$DOTFILE_DIR/bash/ps1.sh"
-
-export DOTFILE_BASHRC_SOURCED=1
