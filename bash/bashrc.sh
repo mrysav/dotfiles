@@ -57,7 +57,7 @@ if [ "$TILIX_ID" ] || [ "$VTE_VERSION" ]; then
   fi
 fi
 
-aws_completer="$(which aws_completer)"
+aws_completer="$(which aws_completer 2>/dev/null)"
 if [ "$aws_completer" != "" ]; then
   complete -C "$aws_completer" aws
 fi
