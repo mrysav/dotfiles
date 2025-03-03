@@ -6,7 +6,7 @@ if ! [[ $PATH == *"rbenv/shims"* ]]; then
         export PATH="$HOME/.rbenv/bin:$PATH"
     fi
 
-    if which rbenv >/dev/null; then
+    if which rbenv >/dev/null 2>/dev/null; then
         eval "$(rbenv init - bash)"
     fi
 

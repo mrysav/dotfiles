@@ -1,5 +1,9 @@
 # shellcheck shell=bash
 
+if [[ -d "$HOME/.pyenv/bin" ]]; then
+    export PATH="$HOME/.pyenv/bin:$PATH"
+fi
+
 if which pyenv >/dev/null 2>/dev/null; then
     PYENV_BINDIR="$(dirname "$(which pyenv)")"
     PYENV_ROOT="$(dirname "$PYENV_BINDIR")"

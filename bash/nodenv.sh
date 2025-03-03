@@ -7,7 +7,7 @@ if ! [[ $PATH == *"nodenv/shims"* ]]; then
         export PATH="$HOME/.nodenv/bin:$PATH"
     fi
 
-    if which nodenv >/dev/null; then
+    if which nodenv >/dev/null 2>/dev/null; then
         eval "$(nodenv init --no-rehash -)"
     fi
 fi
