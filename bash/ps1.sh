@@ -23,6 +23,10 @@ else
     PSHOST="@\h"
 fi
 
+if [[ -f "/usr/share/git-core/contrib/completion/git-prompt.sh" ]]; then
+    source /usr/share/git-core/contrib/completion/git-prompt.sh
+fi
+
 if type __git_ps1 >/dev/null 2>/dev/null ; then
     GIT_PS1="\$(__git_ps1)"
 fi
