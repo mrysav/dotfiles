@@ -8,7 +8,7 @@ if ! [[ $PATH == *"nodenv/shims"* ]]; then
     fi
 
     if which nodenv >/dev/null 2>/dev/null; then
-        eval "$(nodenv init --no-rehash -)"
+        eval "$(nodenv init - --no-rehash bash)"
     fi
 fi
 
